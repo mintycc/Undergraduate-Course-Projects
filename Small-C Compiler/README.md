@@ -1,7 +1,6 @@
 
 # SMALL-C COMPILER
 
-----------
 
 
 ## Project Introduction
