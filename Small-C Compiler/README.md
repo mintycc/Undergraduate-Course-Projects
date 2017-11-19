@@ -3,7 +3,7 @@
 
 ![](https://img.shields.io/badge/Yacc-1.0.0-green.svg) ![](https://img.shields.io/badge/Lex-1.0.0-green.svg) ![](https://img.shields.io/badge/Platform-Linux-lightgray.svg) 
 
-## Project Introduction
+## 1. Project Introduction
 **Small-C Compiler** is a compiler for **Small-C** language. **Small-C** is a simplified **C** language with the main syntax remained. This mini compiler could analyze the syntax of input code and build a parsing tree, then generate code in **LLVM** language accoring to the structure of this paring tree.
 
 This project includes 3 parts:
@@ -16,7 +16,7 @@ This project includes 3 parts:
 An e-book *Lex and Yacc: from Baics to Advance* could help you better understand **Lex** and **Yacc**.)
 
 
-## Environment Setting
+## 2. Environment Setting
 
 This whole project is based on Ubuntu 14.04.
 
@@ -43,10 +43,10 @@ However, you could switch to this approach:
 Though this project couldbe  executed without **clang**, reading **LLVM IR** generated could help a lot in understanding how the language works.
 
 
-## Lexical Analyzer
+## 3. Lexical Analyzer
 A lexical analyser has been implemented in this part. It reads the source codes of **SMALLC** and separates them into tokens. The work is done using **Lex** and the related file is `smallc.l`
 
-### DEC HEX & OCT Numbers
+### a. DEC HEX & OCT Numbers
 
 In this part, `#include<stdlib.h>` can be checked out for some hint. 
 
@@ -57,10 +57,10 @@ Also, **NEGINT** which stands for negative integer should not be forgotten.
     -[1-9][0-9]* 					{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
     0[1-7][0-7]*    				{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext); 		return INT;}
     -0[1-7][0-7]*   				{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
-    0[Xx][1-9a-fA-F][0-9a-fA-F]* 				{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext);  	return INT;}
-    -0[Xx][1-9a-fA-F][0-9a-fA-F]* 				{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
+    0[Xx][1-9a-fA-F][0-9a-fA-F]* 			{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext);  	return INT;}
+    -0[Xx][1-9a-fA-F][0-9a-fA-F]* 			{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
 
-### Comments
+### b. Comments
 There are two kinds of comments in **SMALLC** language.
 One is the two slash, which is implemented by:
 
@@ -76,10 +76,10 @@ The other one is the `/*` and `*/` pairs:
     }
 
 
-## Syntax Analyzer
+## 4. Syntax Analyzer
 In this step, syntax analysis is performed by  **Yacc** and the file here is `smallc.y`.
 
-### EXP
+### a. EXP
 In this part, all possible operands are  listed out  to reduce the burden in code generation. For example:
 
     | EXP PLUS EXP	{ root=noTermBuild("EXP"); noTermInsert(root,stack[top-1]); termInsert(root,"PLUS"); 	noTermInsert(root,stack[top]); top = top - 1; stack[top]=root;}
@@ -88,18 +88,18 @@ In this part, all possible operands are  listed out  to reduce the burden in cod
     | EXP LT EXP	{ root=noTermBuild("EXP"); noTermInsert(root,stack[top-1]); termInsert(root,"LT"); 	noTermInsert(root,stack[top]); top = top - 1; stack[top]=root;}
     ...
 
-### Read and Write
+### b. Read and Write
 `WR` is used to hold `read()` and `write()`.
 
-    : WRITE LP EXP RP 	{root=noTermBuild("WR"); termInsert(root,"WRITE"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
-	| READ LP EXP RP 	{root=noTermBuild("WR"); termInsert(root,"READ"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
+    : WRITE LP EXP RP {root=noTermBuild("WR"); termInsert(root,"WRITE"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
+	| READ LP EXP RP {root=noTermBuild("WR"); termInsert(root,"READ"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
 	;
 
 `WR`is in the syntax of `EXP`.
 
     | WR		{root = noTermBuild("EXP"); noTermInsert(root, stack[top]); stack[top]=root;}
 
-### Parsing Tree
+### c. Parsing Tree
 In this part, in order to print a parsing tree, a tree data-structure is built up.
 Such information are recorded for each treeNode:
 
@@ -113,12 +113,12 @@ These functions below are implemented for building tree and printing out  result
 
     struct treeNode* noTermBuild(char* st); 						// build non-terminal in the tree
 	struct treeNode* termBuild(char* pST,char* sST);					// build terminal in the tree
-	void noTermInsert(struct treeNode* root, struct treeNode* point);					// insert non-terminal in the tree
+	void noTermInsert(struct treeNode* root, struct treeNode* point);			// insert non-terminal in the tree
 	void termInsert(struct treeNode* root, char* st);					// build terminal in the tree
 	void printTree(struct treeNode* root, int depth);					// print out the parsing tree
 
 
-## Target LLVM code generation
+## 5. Target LLVM code generation
 In this part, quite a lot of functions are used. `CG` stands for `Code Generation`. The function of these code could be understood easily.
 
     void CG_Program(struct treeNode* root);
