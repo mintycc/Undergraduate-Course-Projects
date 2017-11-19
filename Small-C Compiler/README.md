@@ -55,7 +55,7 @@ Also, **NEGINT** which stands for negative integer should not be forgotten.
     0x0|0X0|00|0 					{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext);  	return INT;}
     [1-9][0-9]* 					{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext);  	return INT;}
     -[1-9][0-9]* 					{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
-    0[1-7][0-7]*    				{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext); 		return INT;}
+    0[1-7][0-7]*    				{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext); 	return INT;}
     -0[1-7][0-7]*   				{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
     0[Xx][1-9a-fA-F][0-9a-fA-F]* 			{ strcpy(nodeLable, "INT: "); 	strcat(nodeLable, yytext);  	return INT;}
     -0[Xx][1-9a-fA-F][0-9a-fA-F]* 			{ strcpy(nodeLable, "NEGINT: ");strcat(nodeLable, yytext);  	return NEGINT;}
@@ -91,7 +91,7 @@ In this part, all possible operands are  listed out  to reduce the burden in cod
 ### b. Read and Write
 `WR` is used to hold `read()` and `write()`.
 
-    : WRITE LP EXP RP {root=noTermBuild("WR"); termInsert(root,"WRITE"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
+    : WRITE LP EXP RP{root=noTermBuild("WR"); termInsert(root,"WRITE"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
 	| READ LP EXP RP {root=noTermBuild("WR"); termInsert(root,"READ"); 	termInsert(root,"LP"); noTermInsert(root,stack[top]);  termInsert(root,"RP"); stack[top]=root;}
 	;
 
