@@ -1,7 +1,7 @@
 
 # SMALL-C COMPILER
 
-![](https://img.shields.io/badge/Yacc-1.0.0-green.svg) ![](https://img.shields.io/badge/Lex-1.0.0-green.svg) ![](https://img.shields.io/badge/Platform-Linux-lightgray.svg) 
+![](https://img.shields.io/badge/Yacc-1.0.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/Lex-1.0.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Linux-lightgray.svg?style=flat-square) 
 
 ## 1. Project Introduction
 **Small-C Compiler** is a compiler for **Small-C** language. **Small-C** is a simplified **C** language with the main syntax remained. This mini compiler could analyze the syntax of input code and build a parsing tree, then generate code in **LLVM** language accoring to the structure of this paring tree.

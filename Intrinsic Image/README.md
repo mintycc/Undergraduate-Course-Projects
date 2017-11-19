@@ -1,53 +1,66 @@
-## 运行步骤 ##
-首先在 MATLAB 中打开 project 的根目录
+# Intrinsic Image
 
-    >> cd '...\Intrinsic Image'
+![](https://img.shields.io/badge/Matlab-2015a-green.svg?style=flat-square) ![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg?style=flat-square) ![](https://img.shields.io/badge/Language-Mat%20|%20Python-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Windows-lightgray.svg?style=flat-square)
 
-然后输入
+## 1. Project Introduction
 
-    >> intrinsic data_name
+This project is the final project of course **Software Engineering** and **Computer Graphics**.
 
-#####其中 data_name 为 /data 中的文件夹名(apple, box, cup1, ...)
+Functionality: takes a series of images of one object as input, this program could derive its **intrinsic image** (reflectance + shading).
 
-python文件 get_amg.py 将被自动调用
+<div align=center>
+	<img src="https://i.imgur.com/7J7iH5P.png" width="600">
+</div>
 
-## 需要环境 ##
+
+By utilizing **Matlab** and python's library **PyAMG**, the program is mainly written in **Mat** and **Python**.
+
+## 2. Technique Details
+
+This project primarily referenced the method in **Yair Weiss**'s paper [*Deriving intrinsic images from image sequences*](http://ieeexplore.ieee.org/document/937606/).
+
+The derivation process is illustrated as follows:
+
+1. Input the image sequences and normalize.
+2. Calculate gradients of adjacent pixels horizontally and vertically.
+3. Use the median to get estimates.
+4. Solve a Possion equation on 2-D grid to get the result.
+
+<div align=center>
+	<br/>
+	<img src="https://i.imgur.com/ErVgGw5.png" width="400">
+</div>
+
+## 3. How To Use
+
+### a. Environment Setting
+
+Make sure you have already installed **Matlab** and **Python** on your equipment.
+
+Required **Python** packages:
+
 - python.numpy
 - python.scipy
 - python.pyamg
 
-## 文件说明 ##
-> intrinsic.m 
+### b. Input and Output Path
 
-主文件
-> *.m 
+Input:
 
-MATLAB 各函数
+    ./data/<case_name>/*.png
 
-> get_amg.py
+Output:
 
-python 文件，讲在intrinsic的执行过程中自动被调用
+    ./output/<case_name>_*.png
 
-> /data
+### c. Run
 
-输入文件夹
+Switch to root of this folder in **MATLAB**
 
-> /output
+    >> cd '...\<your_path>\Intrinsic Image'
 
-输出文件夹
+Then input the following command will execute the program:
 
-## 输入输出文件 ##
+    >> intrinsic data_name
 
-（根据执行时输入的 'data_name'）
-
-输入文件为
-
-    ./data/<data_name>/*.png
-
-输出文件为
-
-    ./output/<data_name>_*.png
-
-## 另外一些说明 ##
-
-程序在执行过程中将会自动生成一些 txt 文件， 无须在意
+*\* Some intermediate files will be generated during the processing, never mind.*
