@@ -26,10 +26,6 @@ The derivation process is illustrated as follows:
 3. Use the median to get estimates.
 4. Solve a Possion equation on 2-D grid to get the result.
 
-<div align=center>
-	<br/>
-	<img src="https://i.imgur.com/ErVgGw5.png" width="400">
-</div>
 
 ## 3. How To Use
 
