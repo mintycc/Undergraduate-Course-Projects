@@ -3,7 +3,9 @@
 This respository includes four typical projects I completed during my undergraduate study at Shanghai Jiao Tong University.
 
 ## 1. SJTU BBS Search Engine 
-![](https://img.shields.io/badge/Hadoop-2.9.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/Stanford%20Segmenter-3.8.0-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/Hadoop-2.9.0-blue.svg?style=flat-square) ![](https://img.shields.io/badge/Stanford%20Segmenter-3.8.0-green.svg?style=flat-square)
+![](https://img.shields.io/badge/Language-Java%20|%20Python-yellowgreen.svg?style=flat-square) 
+![](https://img.shields.io/badge/Platform-Linux-lightgray.svg?style=flat-square)
 
     ./SJTU BBS Search Engine
 
@@ -40,9 +42,10 @@ Takes a series of images of one object, this program could derive its **intrinsi
 By utilizing **Matlab** and python's library **PyAMG**, the program is mainly written in **Mat** and **Python**.
 
 ## 4. Data Structure
+![](https://img.shields.io/badge/Language-C++-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Windows%20|%20Linux-lightgray.svg?style=flat-square)
 
     ./Data Structure
 
-During studying **Data Structure**, I built a set of **STL containers** of my own in **CPP**.
+During learning **Data Structure**, I built a set of **STL containers** of my own in **CPP**.
 
 These containers include: `ArrayList`, `Deque`, `HashMap`, `LinkedList`, `TreeMap` and `Priority Queue` with their **algorithms** and **iterators**.

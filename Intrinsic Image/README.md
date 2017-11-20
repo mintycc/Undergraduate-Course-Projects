@@ -28,7 +28,7 @@ The derivation process is illustrated as follows:
 4. Solve a Possion equation on 2-D grid to get the result.
 
 
-## 3. How To Use
+## 3. How to Use
 
 ### a. Environment Setting
 
@@ -54,10 +54,10 @@ Output:
 
 Switch to root of this folder in **MATLAB**
 
-    >> cd '...\<your_path>\Intrinsic Image'
+    >> cd '\<your_path>\Intrinsic Image'
 
 Then input the following command will execute the program:
 
-    >> intrinsic data_name
+    >> intrinsic <case_name>
 
-*\* Some intermediate files will be generated during the processing, never mind.*
+***\*** Some intermediate files will be generated during the processing, never mind.*

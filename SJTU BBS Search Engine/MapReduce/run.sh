@@ -11,4 +11,4 @@ javac -cp $hadoop_CLASSPATH aJob.java
 jar -cvf aJob.jar ./*.class
 hdfs dfs -rm -r firstOutput
 hdfs dfs -rm -r secondOutput
-hadoop jar aJob.jar aJob /fSJTUk.txt firstOutput firstOutput secondOutput
+hadoop jar aJob.jar aJob <input_file> firstOutput firstOutput secondOutput
