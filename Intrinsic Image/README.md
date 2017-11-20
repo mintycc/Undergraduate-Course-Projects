@@ -1,6 +1,7 @@
 # Intrinsic Image
 
-![](https://img.shields.io/badge/Matlab-2015a-green.svg?style=flat-square) ![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg?style=flat-square) ![](https://img.shields.io/badge/Language-Mat%20|%20Python-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Windows-lightgray.svg?style=flat-square)
+![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/Matlab-2015a-green.svg?style=flat-square)  ![](https://img.shields.io/badge/Language-Mat%20|%20Python-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Windows-lightgray.svg?style=flat-square)
 
 ## 1. Project Introduction
 

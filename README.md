@@ -2,7 +2,8 @@
 
 This respository includes four typical projects I completed during my undergraduate study at Shanghai Jiao Tong University.
 
-## 1. SJTU BBS Search Engine ![](https://img.shields.io/badge/Hadoop-2.9.0-green.svg) ![](https://img.shields.io/badge/Stanford%20Segmenter-3.8.0-blue.svg)
+## 1. SJTU BBS Search Engine 
+![](https://img.shields.io/badge/Hadoop-2.9.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/Stanford%20Segmenter-3.8.0-blue.svg?style=flat-square)
 
     ./SJTU BBS Search Engine
 
@@ -12,7 +13,11 @@ This search engine includes three parts: one **crawler**, one **segementer** and
 
 The project was developed and tested on **Linux** platform, mainly written in **Java** and **Python**.
 
-## 2. SMALL-C Compiler ![](https://img.shields.io/badge/Yacc-1.0.0-green.svg) ![](https://img.shields.io/badge/Lex-1.0.0-green.svg)
+## 2. SMALL-C Compiler 
+
+![](https://img.shields.io/badge/Yacc-1.0.0-green.svg?style=flat-square) 
+![](https://img.shields.io/badge/Lex-1.0.0-blue.svg?style=flat-square) 
+![](https://img.shields.io/badge/Platform-Linux-lightgray.svg?style=flat-square) 
 
     ./Small-C Compiler
 
@@ -22,7 +27,9 @@ This compiler based on **Yacc** and **Lex** tools.
 
 The project was developed and tested on **Linux** platform.
 
-## 3. Intrinsic Image ![](https://img.shields.io/badge/Matlab-2015a-green.svg) ![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg) 
+## 3. Intrinsic Image 
+![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/Matlab-2015a-green.svg?style=flat-square)  ![](https://img.shields.io/badge/Language-Mat%20|%20Python-yellowgreen.svg?style=flat-square) ![](https://img.shields.io/badge/Platform-Windows-lightgray.svg?style=flat-square)
 
     ./Intrinsic Image
 
