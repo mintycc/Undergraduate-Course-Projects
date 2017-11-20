@@ -13,7 +13,7 @@ To consolidate the knowledge learnt in course **Distributed Programming**, I imp
 
 This search engine includes three parts: one **crawler**, one **segementer** and one **map-reducer**.
 
-The project was developed and tested on **Linux** platform, mainly written in **Java** and **Python**.
+This project was developed and tested on **Linux** platform, mainly written in **Java** and **Python**.
 
 ## 2. SMALL-C Compiler 
 
@@ -27,7 +27,7 @@ According to the normal practice, I built a compiler during the course **Compile
 
 This compiler based on **Yacc** and **Lex** tools.
 
-The project was developed and tested on **Linux** platform.
+This project was developed and tested on **Linux** platform.
 
 ## 3. Intrinsic Image 
 ![](https://img.shields.io/badge/PyAMG-3.3.2-blue.svg?style=flat-square)
